@@ -14,7 +14,7 @@ function Dashboard() {
 
   const fetchExpenses = async () => {
     try {
-      const res = await axios.get('/api/expenses', {
+      const res = await axios.get('https://expense-tracker-backend-ffoj.onrender.com/api/expenses', {
         headers: { Authorization: token }
       });
       setExpenses(res.data);
@@ -30,7 +30,7 @@ function Dashboard() {
   const handleAdd = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/expenses', 
+      await axios.post('https://expense-tracker-backend-ffoj.onrender.com/api/expenses', 
         { title, amount, category, date },
         { headers: { Authorization: token } }
       );
@@ -43,7 +43,7 @@ function Dashboard() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`/api/expenses/${id}`, {
+      await axios.delete(`https://expense-tracker-backend-ffoj.onrender.com/api/expenses/${id}`, {
         headers: { Authorization: token }
       });
       fetchExpenses();
