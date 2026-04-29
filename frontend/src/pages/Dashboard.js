@@ -23,10 +23,10 @@ function Dashboard() {
     }
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
+ useEffect(() => {
     fetchExpenses();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   const handleAdd = async (e) => {
     e.preventDefault();
